@@ -1,5 +1,6 @@
 import Button from '../components/Button.jsx';
 import { words } from '../constants/index.js';
+import HeroExperience from '../model/HeroExperience.jsx';
 
 const Hero = () => {
     return (
@@ -36,7 +37,11 @@ const Hero = () => {
                         <Button className="h-12 w-60 md:h-16 md:w-80" id="button" text="See My Work" />
                     </div>
                 </header>
+
                 {/* RIGHT HERO CONTENT */}
+                <figure className="hero-3d-layout border-2 border-red-200">
+                    <HeroExperience />
+                </figure>
             </div>
         </section>
     );
