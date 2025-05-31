@@ -1,8 +1,14 @@
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import AnimatedCounter from '../components/AnimatedCounter.jsx';
 import Button from '../components/Button.jsx';
 import { words } from '../constants/index.js';
 import HeroExperience from '../model/HeroExperience.jsx';
 
 const Hero = () => {
+    useGSAP(() => {
+        gsap.fromTo('.hero-text h1', { y: 50, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.2, duration: 1, ease: 'power2.inOut' });
+    });
     return (
         <section id="hero" className="relative overflow-hidden">
             <div className="absolute top-0 left-0 z-10">
@@ -34,15 +40,18 @@ const Hero = () => {
                             <h1>Real Life Solution</h1>
                         </div>
                         <p className="text-white-50">Hi, I'm Nosa a Flutter Developer from Indonesia.</p>
-                        <Button className="h-12 w-60 md:h-16 md:w-80" id="button" text="See My Work" />
+                        <Button className="h-12 w-60 md:h-16 md:w-80" id="counter" text="See My Work" />
                     </div>
                 </header>
 
                 {/* RIGHT HERO CONTENT */}
-                <figure className="hero-3d-layout">
-                    <HeroExperience />
+                <figure>
+                    <div className="hero-3d-layout">
+                        <HeroExperience />
+                    </div>
                 </figure>
             </div>
+            <AnimatedCounter />
         </section>
     );
 };

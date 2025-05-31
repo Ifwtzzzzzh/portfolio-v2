@@ -2,6 +2,7 @@ import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { useMediaQuery } from 'react-responsive';
 import HeroLights from '../model/HeroLights.jsx';
+import Particles from '../model/Particles.jsx';
 import { Room } from './Room.jsx';
 
 const HeroExperience = () => {
@@ -19,7 +20,6 @@ const HeroExperience = () => {
                 maxPolarAngle={Math.PI / 2}
             />
             <HeroLights />
-
             <Particles />
             <group scale={isMobile ? 0.7 : 1} position={[0, -3.5, 0]} rotation={[0, -Math.PI / 4, 0]}>
                 <Room />
