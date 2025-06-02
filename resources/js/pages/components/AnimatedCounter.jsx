@@ -24,12 +24,8 @@ const AnimatedCounter = () => {
                     ease: 'power2.out',
                     snap: { innerText: 1 },
                     scrollTrigger: {
-                        trigger: counterRef.current,
-                        start: 'top 70%',
-                        end: 'bottom 30%',
-                        scrub: false,
-                        markers: false,
-                        toggleActions: 'play none none none',
+                        trigger: '#counter',
+                        start: 'top center',
                     },
                     onUpdate: () => {
                         const value = Math.floor(parseInt(numberElement.innerText));
@@ -53,7 +49,7 @@ const AnimatedCounter = () => {
                         ref={(el) => (countersRef.current[index] = el)}
                         className="flex flex-col justify-center rounded-lg bg-zinc-900 p-10"
                     >
-                        <div className="counter-number text-white-50 mb-2 text-5xl font-bold">0</div>
+                        <div className="counter-number text-white-50 mb-2 text-5xl font-bold">0 {item.suffix}</div>
                         <div className="text-white-50 text-lg">{item.label}</div>
                     </div>
                 ))}
