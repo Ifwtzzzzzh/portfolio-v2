@@ -119,6 +119,7 @@ section {
 
         .logo {
             @apply text-white-50 text-xl font-semibold transition-transform duration-300 hover:scale-105 md:text-2xl;
+            color: white;
         }
 
         nav.desktop {
