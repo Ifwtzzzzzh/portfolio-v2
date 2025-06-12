@@ -241,6 +241,7 @@ section {
 
     .timeline {
         @apply absolute -top-10 z-30 h-[110%] w-14 bg-black md:w-28;
+        display: none;
     }
 
     .timeline-logo {
