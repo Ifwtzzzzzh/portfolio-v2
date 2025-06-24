@@ -1,4 +1,7 @@
+import emailjs from '@emailjs/browser';
 import { useRef, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import TitleHeader from '../components/TitleHeader';
 import ContactExperience from '../model/ContactExperience.jsx';
 
@@ -18,7 +21,7 @@ const Contact = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setLoading(true); // Show loading state
+        setLoading(true);
 
         try {
             await emailjs.sendForm(
@@ -27,19 +30,38 @@ const Contact = () => {
                 formRef.current,
                 import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
             );
-
-            // Reset form and stop loading
             setForm({ name: '', email: '', message: '' });
+            toast.success('Message sent successfully!', {
+                position: 'top-right',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'light',
+            });
         } catch (error) {
-            console.error('EmailJS Error:', error); // Optional: show toast
+            toast.error('Failed to send message. Please try again.', {
+                position: 'top-right',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'light',
+            });
         } finally {
-            setLoading(false); // Always stop loading, even on error
+            setLoading(false);
         }
     };
 
     return (
         <section id="contact" className="flex-center section-padding">
+            {/* <ToastContainer /> */}
             <div className="h-full w-full px-5 md:px-10">
+                <ToastContainer />
                 <TitleHeader title="Get in Touch – Let’s Connect" sub="💬 Have questions or ideas? Let’s talk! 🚀" />
                 <div className="grid-12-cols mt-16">
                     <div className="xl:col-span-5">
