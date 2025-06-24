@@ -1,5 +1,6 @@
 import LogoSection from './components/LogoSection.jsx';
 import Navbar from './components/NavBar.jsx';
+import Contact from './sections/Contact.jsx';
 import ExperienceSection from './sections/ExperienceSection.jsx';
 import FeatureCards from './sections/FeatureCards.jsx';
 import Hero from './sections/Hero.jsx';
@@ -18,6 +19,7 @@ const App = () => {
             <ExperienceSection />
             <TechStack />
             <Testimonials />
+            <Contact />
         </>
     );
 };
