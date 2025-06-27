@@ -214,11 +214,6 @@ const socialImgs = [
         link: 'https://www.instagram.com',
     },
     {
-        name: 'fb',
-        imgPath: '/images/fb.png',
-        link: 'https://www.instagram.com',
-    },
-    {
         name: 'x',
         imgPath: '/images/x.png',
         link: 'https://www.instagram.com',
